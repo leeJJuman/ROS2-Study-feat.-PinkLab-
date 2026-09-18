@@ -5,11 +5,11 @@
 
 ### 개발환경 세팅
 
--ubuntu 22.04
+- ubuntu 22.04
   
   ROS2를 공부하기에 적절한 개발환경인 ubuntu 세팅
   
--ROS2 Humble
+- ROS2 Humble
   
   ubuntu 22.04와 호환되는 버전인 ROS2 Humble 세팅
 
