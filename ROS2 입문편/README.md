@@ -1,9 +1,9 @@
-## ROS2 입문편 공부내용 정리
+# ROS2 입문편 공부내용 정리
 
 유튜브 PinkLab 채널의 ROS2 입문편을 공부하며 정리한 기록입니다.
 입문편은 개발환경 세팅과 터미널에서 ROS2를 사용해보는 것이 대부분이었습니다.
 
-### 개발환경 세팅
+## 개발환경 세팅
 
 - ubuntu 22.04
   
@@ -27,7 +27,7 @@
 
     코드를 짤 때 사용할 IDE 세팅
 
-### 터미널 명렁어 및 단축키 정리
+## 터미널 명렁어 및 단축키 정리
 
 <img width="480" height="270" alt="image" src="https://github.com/user-attachments/assets/c496cd7a-73e0-417e-93f9-b5cad86ed2c0" />
 
@@ -76,7 +76,7 @@ alias #alias목록 조회
 
 source ~/.bashrc # bashrc를 reload
 
-## Turtlesim
+### Turtlesim
 
 ros2 run turtlesim turtlesim_node #turtlesim 켜기
 
