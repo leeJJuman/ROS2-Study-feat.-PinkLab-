@@ -32,7 +32,9 @@
 <img width="480" height="270" alt="image" src="https://github.com/user-attachments/assets/c496cd7a-73e0-417e-93f9-b5cad86ed2c0" />
 
 leejjman #사용자이름
+
 dlwjdwnman #PC이름
+
 ~  #홈 경로
 
 Ctrl+Alt+T #터미널 켜기
