@@ -58,10 +58,15 @@ sudo - #관리자 권한으로
 sudo rm -r 폴더명 # 관리자권한으로 폴더명 폴더를 지움 (-r은 옵션, rm이 폴더를 지울수있게함)
 
 cd 폴더명 - #폴더간 이동
+
 ex) cd Doc 상태에서 Tab # Documents 자동으로 완성
+
 ex) cd D 상태에서 탭 두번 # D로 시작하는 폴더 목록 보여줌
+
 cd 상태에서 cd - #홈으로 돌아감
+
 cd .. - #한단계 상위폴더로 이동
+
 ../.. - #두단계 상위
 
 @ --version - # @의 버전 확인
@@ -85,37 +90,57 @@ ros2 run turtlesim turtlesim_node #turtlesim 켜기
 ros2 run <PKG Name> <Node Name>
 
 ros2 node list #node list 출력
+
 ros2 node info /turtlesim #turtlesim 노드가 무엇을 제공하는지 출력
 
-*Service
+#### Service
 
 ros2 service list #service list 출력
+
 ros2 service list -t # 데이터 타입을 포함하여 출력
+
 ros2 service type /turtle1/teleport_absolute # turtle1의 teleport_absolute의 type 출력
+
 ros2 interface show turtlesim/srv/TeleportAbsolute #TeleportAbsolute service의 request 출력
+
 ros2 service call /turtle1/teleport_absolute turtlesim/srv/TeleportAbsolute "{x: 2,y: 2,theta: 1.57}" #TA 서비스 call 
+
 #서비스 사용시  list로 확인-> type확인 -> request확인 -> service call
+
 spawn - 새로운 거북이 만듦
 
 
-*Topic
+#### Topic
 
 ros2 topic list #topic list 출력
+
 ros2 topic type /turtle1/pose #turtle1 의 topic 'pose'의 데이터 타입 출력
+
 ros2 topic list -t #데이터 타입을 포함하여 출력
+
 ros2 topic list -v #발행하고있는 topic 출력
+
 ros2 interface show turtlesim/msg/Pose # Pose의 생긴모양 출력
+
 ros2 topic echo /turtle1/pose # pose 값 출력 (topic echo = 구독)
+
 rqt_graph # 현재 토픽/노드 구조 확인
+
 cmd_vel #주행명령
+
 ros2 topic pub --once /turtle1/cmd_vel geometry_msgs/msg/Twist "{linear:{x: 2,y: 0,z: 0},angular:{x: 0,y: 0,z: 0}}" # pub --once 한번만 실행, pub --rate 1 1Hz마다 실행 
+
 #구독 멈추기 -> Ctrl+C
+
 #토픽 사용시 list로 확인 -> type 확인 -> request 확인 ros2 interface show (type으로 출력된 것)          -> topic pub *중첩 발행 가능
 
-*action
+
+#### action
 
 ros2 run turtlesim turtle_teleop_key # 키보드로 거북이 조종 (turtlesim_node와 같이 실행해야함)
+
 ros2 action list # action list 출력
+
 ros2 topic list -t #데이터 타입을 포함하여 출력
 ros2 interface show turtlesim/action/RotateAbsolute # 생긴모양 확인
 ros2 action send_goal /turtle1/rotate_absolute turtlesim/action/RotateAbsolute "{theta: 3.14}"  #액션의 목표 지정
