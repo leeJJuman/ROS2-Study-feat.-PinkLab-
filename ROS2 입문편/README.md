@@ -142,5 +142,7 @@ ros2 run turtlesim turtle_teleop_key # 키보드로 거북이 조종 (turtlesim_
 ros2 action list # action list 출력
 
 ros2 topic list -t #데이터 타입을 포함하여 출력
+
 ros2 interface show turtlesim/action/RotateAbsolute # 생긴모양 확인
+
 ros2 action send_goal /turtle1/rotate_absolute turtlesim/action/RotateAbsolute "{theta: 3.14}"  #액션의 목표 지정
