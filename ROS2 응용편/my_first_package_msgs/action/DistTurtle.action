@@ -1,0 +1,13 @@
+# Request
+float32 linear_x #선속도
+float32 angular_z #각속도
+float32 dist #이동할 거리
+---
+# Result
+float32 pos_x #현재의 표지션과 자세
+float32 pos_y
+float32 pos_theta
+float32 result_dist 
+---
+# Feedback
+float32 remained_dist
