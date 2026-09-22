@@ -1,9 +1,12 @@
 # 패키지 만들기 실습
 패키지를 직접 만들며 실습해본 코드들을 정리한 기록입니다.
 
-패키지 생성부터 노드, topic 구독 및 발행, 메시지 출력, 서비스 서버 및 서비스 생성 액션 서버 및 액션 생성 등이 포함되어있습니다. 
+패키지 생성부터 노드, topic 구독 및 발행, 메시지 출력, 서비스 서버 및 서비스 생성 액션 서버 및 액션 생성, 멀티스레드, 파라미터, rosbag 등이 포함되어있습니다. 
 
 아래는 터미널 명령어들을 정리하였고 폴더내의 각 코드의 주석에서 상세하게 분석할 수 있습니다.
+
+메시지 정의는 my_first_package_msgs 참조해주시길 바랍니다.
+
 ### 패키지 만들기
 ros2 pkg create --build-type ament_python --node-name my_first_node my_first_package
 
@@ -18,13 +21,13 @@ source ./install/local_setup.bash #빌드후 실행
 ros2 run my_first_package my_first_node
 
 ### package에서 topic 구독하기
-ros2 run my_first_package my_subsriber
+ros2 run my_first_package my_subscriber
 
 ### package에서 topic 발행하기
 ros2 run my_first_package my_publisher
-
+, 
 ### 토픽 구독하여 메시지 출력하기
-ros2 run my_first_package turtle_cmd_and_pose #메시지 정의는 my_first_package_msgs 참조
+ros2 run my_first_package turtle_cmd_and_pose 
 
 ### 노드 구조 시각적으로 확인
 rqt_graph #실시간으로 노드가 어떤 관계에 놓여있는지 확인 가능
@@ -52,7 +55,7 @@ ros2 param dump /turtlesim > ./turtlesim.yaml #파라미터 dump
 
 ros2 param load /turtlesim ./turtlesim.yaml #파라미터 불러오기
 
-### bag
+### rosbag
 ros2 bag record -o turtle_test -a #토픽 기록
 
 ros2 bag play turtle_test/ #기록된 토픽 재생
@@ -63,7 +66,7 @@ ros2 bag play turtle_test/ #기록된 토픽 재생
 'my_subscriber = my_first_package.my_subscriber:main',
 'my_publisher = my_first_package.my_publisher:main',
 'turtle_cmd_and_pose = my_first_package.turtle_cmd_and_pose:main',
-'my_service_server = my_first_package.my_service_server:main
+'my_service_server = my_first_package.my_service_server:main',
 'dist_turtle_action_server = my_first_package.dist_turtle_action_server:main',
 'my_multi_thread = my_first_package.my_multi_thread:main'
 ```
