@@ -19,9 +19,18 @@ find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
  "msg/CmdAndPoseVel.msg"
  "srv/MultiSpawn.srv"
- "action/DistTurtle.action"
 )
 ```
 
 ## 액션 메시지 정의
 action/DistTurtle.action 파일에 액션 메시지 정의
+##### 액션 인터페이스 빌드 규칙 등록 (CMakeLists.txt)
+```
+find_package(rosidl_default_generators REQUIRED)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+ "msg/CmdAndPoseVel.msg"
+ "srv/MultiSpawn.srv"
+ "action/DistTurtle.action"# <--- 액션 인터페이스 빌드 추가
+)
+```
