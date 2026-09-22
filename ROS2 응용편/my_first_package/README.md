@@ -2,8 +2,7 @@
 
 
 패키지 만들기
-ros2 pkg create --build-type ament_cmake my_first_package_msgs
-
+ros2 pkg create --build-type ament_python --node-name my_first_node my_first_package
 colcon build --packages-select my_first_package
 
 
