@@ -11,7 +11,7 @@ msg/CmdAndPoseVel.msg 파일에 메시지 정의
 ```
 
 ## 서비스 메시지 정의
-srv/MultiSpawn.srv 파일에 서비스 정의
+srv/MultiSpawn.srv 파일에 서비스 메시지 정의
 ##### 인터페이스 빌드 규칙 등록 (CMakeLists.txt)
 ```
 find_package(rosidl_default_generators REQUIRED)
@@ -22,3 +22,6 @@ rosidl_generate_interfaces(${PROJECT_NAME}
  "action/DistTurtle.action"
 )
 ```
+
+## 액션 메시지 정의
+action/DistTurtle.action 파일에 액션 메시지 정의
