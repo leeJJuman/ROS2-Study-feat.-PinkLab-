@@ -33,33 +33,29 @@ rqt_graph #실시간으로 노드가 어떤 관계에 놓여있는지 확인 가
 ros2 run my_first_package my_service_server #서비스 서버 실행
 ros2 service call /multi_spawn_my_first_package_msgs/srv/MultiSpawn "{num: 1}" #service call
 
-만든 액션 실행
-ros2 action send_goal /dist_turtle my_first_package_msgs/action/DistTurtle "{linear_x: 0, angular_z: 0, dist: 0}"
+### 액션
+ros2 run my_first_package dist_turtle_action_server #액션 서버 실행
+ros2 action send_goal /dist_turtle my_first_package_msgs/action/DistTurtle "{linear_x: 0, angular_z: 0, dist: 0}" #액션 실행
+ros2 action send_goal --feedback /dist_turtle my_first_package_msgs/action/DistTurtle "{linear_x: 0, angular_z: 0, dist: 0}" #피드백 포함하기
 
+### 멀티스레드
+ros2 run my_first_package my_multi_thread #멀티스레드 실행
 
-피드백 포함하기
-ros2 action send_goal --feedback /dist_turtle my_first_package_msgs/action/DistTurtle "{linear_x: 0, angular_z: 0, dist: 0}"
+### 파라미터
+ros2 param list #파라미터 리스트 조회
 
-파라미터 리스트
-ros2 param list
+ros2 param get /turtlesim background_g #파라미터 값 조회
 
-파라미터 값 조회
-ros2 param get /turtlesim background_g
+ros2 param set /turtlesim background_r 250 #파라미터 값 변경
 
-파라미터 값 변경
-ros2 param set /turtlesim background_r 250
-파라미터 dump
-ros2 param dump /turtlesim > ./turtlesim.yaml
-파라미터 불러오기
-ros2 param load /turtlesim ./turtlesim.yaml
+ros2 param dump /turtlesim > ./turtlesim.yaml #파라미터 dump
 
-토픽 기록
-ros2 bag record -o turtle_test -a
+ros2 param load /turtlesim ./turtlesim.yaml #파라미터 불러오기
 
-기록한거 재생
-ros2 bag play turtle_test/
+### bag
+ros2 bag record -o turtle_test -a #토픽 기록
 
-rqt에서 사용가능
+ros2 bag play turtle_test/ #기록된 토픽 재생
 
 ### 엔트리포인트 설정
 ```
