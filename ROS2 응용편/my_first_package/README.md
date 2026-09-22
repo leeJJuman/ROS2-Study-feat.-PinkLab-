@@ -8,57 +8,54 @@
 메시지 정의는 my_first_package_msgs 참조해주시길 바랍니다.
 
 ### 패키지 만들기
-ros2 pkg create --build-type ament_python --node-name my_first_node my_first_package
+`ros2 pkg create --build-type ament_python --node-name my_first_node my_first_package`
 
 ### 빌드
-- colcon build #새로 생성하거나 수정할 시 실행
-- colcon build --package-select my_first_package #원하는 패키지만 빌드
+`colcon build #새로 생성하거나 수정할 시 실행`
+`colcon build --package-select my_first_package #원하는 패키지만 빌드`
 
 ### reload bash
-source ./install/local_setup.bash #빌드후 실행
+`source ./install/local_setup.bash #빌드후 실행`
 
 ### 만든 노드 실행
-ros2 run my_first_package my_first_node
+`ros2 run my_first_package my_first_node`
 
 ### package에서 topic 구독하기
-ros2 run my_first_package my_subscriber
+`ros2 run my_first_package my_subscriber`
 
 ### package에서 topic 발행하기
-ros2 run my_first_package my_publisher
-, 
+`ros2 run my_first_package my_publisher`
+
 ### 토픽 구독하여 메시지 출력하기
-ros2 run my_first_package turtle_cmd_and_pose 
+`ros2 run my_first_package turtle_cmd_and_pose `
 
 ### 노드 구조 시각적으로 확인
-rqt_graph #실시간으로 노드가 어떤 관계에 놓여있는지 확인 가능
+`rqt_graph #실시간으로 노드가 어떤 관계에 놓여있는지 확인 가능`
 
 ### 서비스 
-ros2 run my_first_package my_service_server #서비스 서버 실행
-ros2 service call /multi_spawn_my_first_package_msgs/srv/MultiSpawn "{num: 1}" #service call
+`ros2 run my_first_package my_service_server #서비스 서버 실행`
+`ros2 service call /multi_spawn_my_first_package_msgs/srv/MultiSpawn "{num: 1}" #service call`
 
 ### 액션
-ros2 run my_first_package dist_turtle_action_server #액션 서버 실행
-ros2 action send_goal /dist_turtle my_first_package_msgs/action/DistTurtle "{linear_x: 0, angular_z: 0, dist: 0}" #액션 실행
-ros2 action send_goal --feedback /dist_turtle my_first_package_msgs/action/DistTurtle "{linear_x: 0, angular_z: 0, dist: 0}" #피드백 포함하기
+`ros2 run my_first_package dist_turtle_action_server #액션 서버 실행`
+`ros2 action send_goal /dist_turtle my_first_package_msgs/action/DistTurtle "{linear_x: 0, angular_z: 0, dist: 0}" #액션 실행`
+`ros2 action send_goal --feedback /dist_turtle my_first_package_msgs/action/DistTurtle "{linear_x: 0, angular_z: 0, dist: 0}" #피드백 포함하기`
 
 ### 멀티스레드
-ros2 run my_first_package my_multi_thread #멀티스레드 실행
+`ros2 run my_first_package my_multi_thread #멀티스레드 실행`
 
 ### 파라미터
+```
 ros2 param list #파라미터 리스트 조회
-
 ros2 param get /turtlesim background_g #파라미터 값 조회
-
 ros2 param set /turtlesim background_r 250 #파라미터 값 변경
-
 ros2 param dump /turtlesim > ./turtlesim.yaml #파라미터 dump
-
 ros2 param load /turtlesim ./turtlesim.yaml #파라미터 불러오기
-
+```
 ### rosbag
-ros2 bag record -o turtle_test -a #토픽 기록
+`ros2 bag record -o turtle_test -a #토픽 기록`
 
-ros2 bag play turtle_test/ #기록된 토픽 재생
+`ros2 bag play turtle_test/ #기록된 토픽 재생`
 
 ### 엔트리포인트 설정
 ```
