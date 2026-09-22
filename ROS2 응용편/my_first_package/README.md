@@ -24,11 +24,14 @@ ros2 run my_first_package my_subsriber
 ros2 run my_first_package my_publisher
 
 ### 토픽 구독하여 메시지 출력하기
-ros2 run my_first_package turtle_cmd_and_pose
+ros2 run my_first_package turtle_cmd_and_pose #메시지 정의는 my_first_package_msgs 참조
 
 ### 노드 구조 시각적으로 확인
 rqt_graph #실시간으로 노드가 어떤 관계에 놓여있는지 확인 가능
 
+### 서비스 
+ros2 run my_first_package my_service_server #서비스 서버 실행
+ros2 service call /multi_spawn_my_first_package_msgs/srv/MultiSpawn "{num: 1}" #service call
 
 만든 액션 실행
 ros2 action send_goal /dist_turtle my_first_package_msgs/action/DistTurtle "{linear_x: 0, angular_z: 0, dist: 0}"
