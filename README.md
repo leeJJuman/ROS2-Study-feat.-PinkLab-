@@ -1,2 +1,3 @@
-# ROS2-Study-feat.-PinkLab-
-ROS2 Study with PinkLab Youtube lecture
+# ROS2 공부기록 정리 feat.유튜브 핑크랩 강의
+
+유튜브 핑크랩 채널 R2R(Road to ROS) 강의를 듣고 공부내용과 실습 코드들을 포함하고있습니다.
