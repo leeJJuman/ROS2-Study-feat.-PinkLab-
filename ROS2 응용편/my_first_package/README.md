@@ -37,10 +37,11 @@
 `ros2 service call /multi_spawn_my_first_package_msgs/srv/MultiSpawn "{num: 1}" #service call`
 
 ### 액션
-`ros2 run my_first_package dist_turtle_action_server #액션 서버 실행`
-`ros2 action send_goal /dist_turtle my_first_package_msgs/action/DistTurtle "{linear_x: 0, angular_z: 0, dist: 0}" #액션 실행`
-`ros2 action send_goal --feedback /dist_turtle my_first_package_msgs/action/DistTurtle "{linear_x: 0, angular_z: 0, dist: 0}" #피드백 포함하기`
-
+```
+ros2 run my_first_package dist_turtle_action_server #액션 서버 실행
+ros2 action send_goal /dist_turtle my_first_package_msgs/action/DistTurtle "{linear_x: 0, angular_z: 0, dist: 0}" #액션 실행
+ros2 action send_goal --feedback /dist_turtle my_first_package_msgs/action/DistTurtle "{linear_x: 0, angular_z: 0, dist: 0}" #피드백 포함하기
+```
 ### 멀티스레드
 `ros2 run my_first_package my_multi_thread #멀티스레드 실행`
 
