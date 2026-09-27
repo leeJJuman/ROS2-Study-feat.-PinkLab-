@@ -14,7 +14,7 @@ from rcl_interfaces.msg import SetParametersResult
 
 from rcl_interfaces.msg import ParameterDescriptor, FloatingPointRange
 
-class TurtleSub_Action(TurtlesimSubscriber):
+class TurtleSub_Action(TurtlesimSubscriber): #액션서버 노드의 변수를 업데이트해주는 클래스 생성
 	def __init__(self, ac_server):
 		super().__init__()
 		self.ac_server = ac_server	
@@ -25,17 +25,17 @@ class TurtleSub_Action(TurtlesimSubscriber):
 class DistTurtleServer(Node):
 
 	def __init__(self):
-		super().__init__('dist_turtle_action_server')
+		super().__init__('dist_turtle_action_server') #액션 서버 생성
 		self.total_dist = 0.0
 		self.is_first_time = True
 		self.current_pose = Pose()
 		self.previous_pose = Pose()
 		self.publisher = self.create_publisher(Twist, '/turtle1/cmd_vel',10)
-		self._action_server=ActionServer(self, DistTurtle,'dist_turtle', self.excute_callback)
+		self._action_server=ActionServer(self, DistTurtle,'dist_turtle', self.excute_callback) #목표가 들어오면 콜백함수 실행
 
 		self.get_logger().info("Dist turtle action server is started.")
 		
-		param_desc_quantile = ParameterDescriptor(
+		param_desc_quantile = ParameterDescriptor( #파라미터 서버 적
 			description = 'Quantile time description',
 			floating_point_range = [FloatingPointRange(
 				from_value = 0.0,
@@ -57,9 +57,9 @@ class DistTurtleServer(Node):
 		output_msg = output_msg + "and almost goal time is " + str(self.almost_goal_time)
 		self.get_logger().info(output_msg)
 
-		self.add_on_set_parameters_callback(self.parameter_callback)
+		self.add_on_set_parameters_callback(self.parameter_callback) #파라미터 값이 변경되면 콜백함수 실행
 
-	def parameter_callback(self, params):
+	def parameter_callback(self, params): #파라미터 값 변경시 실행할 콜백함수 정의의
 		for param in params:
 			print(param.name, "is changed to ", param.value)
 			
@@ -74,7 +74,7 @@ class DistTurtleServer(Node):
 
 		return SetParametersResult(successful=True)
 
-	def calc_diff_pose(self):
+	def calc_diff_pose(self): #이동거리 계산 함수 정의
 		if self.is_first_time:
 			 self.previous_pose.x =self.current_pose.x
 			 self.previous_pose.y =self.current_pose.y
@@ -87,7 +87,7 @@ class DistTurtleServer(Node):
 
 		return diff_pose
 
-	def excute_callback(self, goal_handle):
+	def excute_callback(self, goal_handle): # 목표 달성까지 거리 누적, 현재 남은거리를 피드백으로 보내는 콜백함수 정의의
 		feedback_msg = DistTurtle.Feedback()
 		
 		msg = Twist()
@@ -103,7 +103,7 @@ class DistTurtleServer(Node):
 			tmp=feedback_msg.remained_dist - goal_handle.request.dist*self.quantile_time
 			tmp=abs(tmp)
 
-			if tmp < 0.01:
+			if tmp < 0.01: #목표지점 통과했는지 검사
 				output_msg = "The turtle passes the "+str(self.quantile_time)+"point."
 				output_msg=output_msg+" : "+str(tmp)
 				self.get_logger().info(output_msg)
@@ -111,10 +111,10 @@ class DistTurtleServer(Node):
 
 			time.sleep(0.01)
 
-			if feedback_msg.remained_dist<0.2:
+			if feedback_msg.remained_dist<0.2: #남은거리 0.2미만인 경우 루프 탈출
 				break
 
-		goal_handle.succeed()
+		goal_handle.succeed() #액션 성공을 알리고 최종 결과 반환
 		result = DistTurtle.Result()
 		result.pos_x = self.current_pose.x
 		result.pos_y = self.current_pose.y
@@ -127,7 +127,7 @@ class DistTurtleServer(Node):
 
 def main(args=None):
 	rp.init(args=args)
-	executor = MultiThreadedExecutor()
+	executor = MultiThreadedExecutor() #멀티스레드 실행
 	ac = DistTurtleServer()
 	sub = TurtleSub_Action(ac_server = ac)
 
