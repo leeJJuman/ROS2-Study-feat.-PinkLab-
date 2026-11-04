@@ -38,3 +38,10 @@ sudo apt install ros-jazzy-desktop
 source /opt/ros/jazzy/setup.bash
 ```
 
+## bashrc 세팅
+
+- .bashrc 파일에 아래 코드 추가
+```sh
+source ~/alias_settings.sh
+```
+- alias_settings.sh 의 코드 및 주석에 추가로 설명
