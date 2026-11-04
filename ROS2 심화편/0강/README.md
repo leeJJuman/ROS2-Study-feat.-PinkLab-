@@ -2,12 +2,14 @@
 
 - ROS2 실전편 첫번째 강의부터 3번째 강의까지의 기록
 
-## Ubuntu 24.04 noble 설치
+## 개발환경 구축
+
+### Ubuntu 24.04 noble 설치
 ```bash
 sudo do-release-upgrade
 ```
 
-## ROS2 Jazzy 설치
+### ROS2 Jazzy 설치
 
 1. 구글에 Jazzy install 검색 후 첫번째 링크
 2. installation의 Ubuntu 선택
@@ -38,7 +40,7 @@ sudo apt install ros-jazzy-desktop
 source /opt/ros/jazzy/setup.bash
 ```
 
-## bashrc 세팅
+### bashrc 세팅
 
 - .bashrc 파일에 아래 코드 추가
 ```sh
