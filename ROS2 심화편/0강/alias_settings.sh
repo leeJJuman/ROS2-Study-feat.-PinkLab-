@@ -35,3 +35,10 @@ get_status()
 }
 
 alias  ros2_study="ws_setting \"ros2_study\""
+
+#여러 디바이스가 네트워크로 연결되어있는경우 ROS DOMAIN ID가 여러개이므로 각각 보여줄 수 있게 하는 코드
+GREEN='\[\e[1;32m\]'
+BLUE='\[\e[1;34m\]' 
+NC='\[\e[0m\]'
+
+PS1="${BLUE}(ID: \${ROS_DOMAIN_ID:-0})${GREEN}\u${NC}:${BLUE}\w${NC}\$ "
