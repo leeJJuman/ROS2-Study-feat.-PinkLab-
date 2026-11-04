@@ -33,4 +33,8 @@ sudo dpkg -i /tmp/ros2-apt-source.deb
 ```bash
 sudo apt install ros-jazzy-desktop
 ```
+6. 설치 완료 후 환경 설정
+```bash
+source /opt/ros/jazzy/setup.bash
+```
 
