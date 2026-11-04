@@ -1,3 +1,4 @@
+# ROS2 자동완성이 되지 않을 때를 대비
 # argcomplete for ros2 & colcon
 alias tmp1="eval \"\$(register-python-argcomplete3 ros2)\""
 alias tmp2="tmp1; eval \"\$(register-python-argcomplete3 colcon)\""
@@ -6,11 +7,12 @@ alias tmp2="tmp1; eval \"\$(register-python-argcomplete3 colcon)\""
 ID=13
 alias sb="source ~/.bashrc; echo \"Bashrc is reloaded!\""
 
-alias ros_domain="export ROS_DOMAIN_ID=\$ID; echo \"ROS_DOMAINID is set to \$ID !\""
+alias ros_domain="export ROS_DOMAIN_ID=\$ID; echo \"ROS_DOMAINID is set to \$ID !\"" #변수지정은 $로
 alias active_venv_jazzy="source ~/venv/jazzy/bin/activate; echo \"Venv Jazzy is activated.\""
 alias jazzy="active_venv_jazzy; source /opt/ros/jazzy/setup.bash; ros_domain; echo \"ROS2 Jazzy is activated.\""
 
-ws_setting()
+#sh에서 함수 선언
+ws_setting() #입력인자는 $(num)으로 받음
 {
 	jazzy
 	source ~/$1/install/local_setup.bash
