@@ -8,3 +8,26 @@
 ```bash
 sudo apt install ros-jazzy-usb-cam
 ```
+### USB 카메라 켜기
+```bash
+ros2 run usb_cam usb_cam_node_exe 
+```
+- 카메라를 찾아서 ros2 에서 쓸 수 있는 topic 으로 발행
+
+### 카메라 확인
+1. 토픽을 발행한 상태에서 새로운 터미널 열기
+2. rqt 명령어 실행
+3. Plungins -> Visualization -> Image View
+4. Refresh Topics -> 왼쪽에서 /image_raw 선택
+
+## 멀티캐스트
+- 한 번의 송신으로 메시지나 정보를 목표한 여러 컴퓨터에 동시에 전송하는 것
+- 멀티캐스트로 인하여 카메라 송출이 느려질 수 있음
+### 해결방안
+터미널에 아래 명령어
+```bash
+export ROS_LOCALHOST_ONLY=1
+```
+- 네트워크로 내 토픽 발행하지 않는다는 의미
+- 다른 디바이스와 통신 불가
+
