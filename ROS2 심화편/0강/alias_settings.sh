@@ -4,7 +4,7 @@ alias tmp1="eval \"\$(register-python-argcomplete3 ros2)\""
 alias tmp2="tmp1; eval \"\$(register-python-argcomplete3 colcon)\""
 
 # ALIAS settings
-ID=13
+ID=47
 alias sb="source ~/.bashrc; echo \"Bashrc is reloaded!\""
 
 alias ros_domain="export ROS_DOMAIN_ID=\$ID; echo \"ROS_DOMAINID is set to \$ID !\"" #변수지정은 $로
