@@ -3,7 +3,7 @@
 - ROS2 실전편 첫번째 강의부터 3번째 강의까지의 기록
 
 ## Ubuntu 24.04 noble 설치
-bash ```
+```bash
 sudo do-release-upgrade
 ```
 
