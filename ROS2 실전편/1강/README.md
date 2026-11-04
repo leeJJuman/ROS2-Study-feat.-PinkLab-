@@ -31,3 +31,7 @@ export ROS_LOCALHOST_ONLY=1
 - 네트워크로 내 토픽 발행하지 않는다는 의미
 - 다른 디바이스와 통신 불가
 
+## 패키지 생성
+```bash
+ros2 pkg create --build-type ament_python my_opencv_tutorials
+```
