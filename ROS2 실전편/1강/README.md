@@ -51,3 +51,8 @@ pip3 install opencv-python
  sudo apt install ros-jazzy-cv-bridge
 ```
 - ROS와 OpenCV의 이미지 데이터타입을 이어주기 위해 cv-bridge 다운로드
+
+## cv-bridge를 이용하여 opencv로 얻은 카메라 데이터를 ros2 topic 으로 발행
+```bash
+ros2 run my_opencv_tutorials img_pub
+```
