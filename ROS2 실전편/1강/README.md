@@ -35,3 +35,19 @@ export ROS_LOCALHOST_ONLY=1
 ```bash
 ros2 pkg create --build-type ament_python my_opencv_tutorials
 ```
+
+## pip 관련 설정
+```bash
+python3 -m pip config set global.break-system-packages true
+```
+
+## opencv 라이브러리 설치
+```bash
+pip3 install opencv-python
+```
+
+## cv-bridge 설치
+```bash
+ sudo apt install ros-jazzy-cv-bridge
+```
+- ROS와 OpenCV의 이미지 데이터타입을 이어주기 위해 cv-bridge 다운로드
