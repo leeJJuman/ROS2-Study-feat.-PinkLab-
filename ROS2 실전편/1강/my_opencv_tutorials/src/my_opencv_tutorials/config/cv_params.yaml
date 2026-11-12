@@ -3,9 +3,19 @@ img_publisher: #파라미터 지정
         camera_device: 0
         width: 320
         height: 240 
-        frame_rate : 10
+        frame_rate : 30
 
-hsv_converter:
+hsv_converter: #HSV 변환기 파라미터 지정
     ros__parameters:
         saturation_scale: 1.0
         value_scale: 1.0
+        
+cartoon_styler: #카툰 스타일러 파라미터 지정
+    ros__parameters:
+        sigma_color: 20
+        sigma_space: 9
+
+edge_detect: #에지 디텍트 파라미터 지정
+    ros__parameters:
+        threshold1: 100
+        threshold2: 200
