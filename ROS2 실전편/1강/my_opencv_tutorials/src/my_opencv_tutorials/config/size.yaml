@@ -3,7 +3,7 @@ img_publisher: #파라미터 지정
         camera_device: 0
         width: 320
         height: 240 
-        frame_rate : 1
+        frame_rate : 10
 
 
         
