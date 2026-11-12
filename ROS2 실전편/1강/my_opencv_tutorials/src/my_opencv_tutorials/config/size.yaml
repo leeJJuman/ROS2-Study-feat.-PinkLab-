@@ -1,4 +1,4 @@
-img_publisher:
+img_publisher: #파라미터 지정
     ros__parameters:
         camera_device: 0
         width: 320
