@@ -1,4 +1,4 @@
-<?xml version="1.0"?> #파라미터를 가져오기위한 launch 파일
+<?xml version="1.0"?> <!--파라미터를 가져오기위한 launch 파일-->
 <launch>
     <arg name="params_file" 
                 default="$(find-pkg-share my_opencv_tutorials)/config/size.yaml"/>
