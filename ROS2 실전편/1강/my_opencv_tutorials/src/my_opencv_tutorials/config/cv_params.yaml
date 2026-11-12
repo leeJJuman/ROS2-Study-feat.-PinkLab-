@@ -5,5 +5,7 @@ img_publisher: #파라미터 지정
         height: 240 
         frame_rate : 10
 
-
-        
+hsv_converter:
+    ros__parameters:
+        saturation_scale: 1.0
+        value_scale: 1.0
