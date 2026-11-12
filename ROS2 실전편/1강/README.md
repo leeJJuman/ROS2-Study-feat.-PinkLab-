@@ -53,6 +53,7 @@ pip3 install opencv-python
 - ROS와 OpenCV의 이미지 데이터타입을 이어주기 위해 cv-bridge 다운로드
 
 ## cv-bridge를 이용하여 opencv로 얻은 카메라 데이터를 ros2 topic 으로 발행
+
 ```bash
 ros2 run my_opencv_tutorials img_pub
 ```
@@ -61,6 +62,11 @@ ros2 run my_opencv_tutorials img_pub
 
 - config 폴더 만들고 cv_params.yaml 파일생성 (파라미터를 반영하고싶을땐 cv_params.yaml 파일에서 값 수정)
 - launch 폴더에 bringup_cv.launch.xml 파일 생성
+- setup.py의 data_files에 아래 코드 추가
+ ```python
+('share/' + package_name + '/launch', glob.glob(os.path.join('launch', '*.launch.*'))),
+('share/' + package_name + '/config', glob.glob(os.path.join('config', '*.yaml'))),
+```
 - img_pub.py 파일 생성 (코드의 설명은 주석에)
 
 ```bash
@@ -69,3 +75,24 @@ ros2 launch my_opencv_tutorials bringup_cv.launch.xml
 - 반영되었는지 확인
 
 ## HSV
+
+- cv_params.yaml 파일에 아래 내용 추가
+```yaml
+hsv_converter:
+    ros__parameters:
+        saturation_scale: 1.0
+        value_scale: 1.0
+```
+- launch폴더에 hsv_converter.launch.xml 파일 생성
+- setup.py의 entry_points에 아래 코드 추가
+```python
+'convert_hsv = my_opencv_tutorials.convert_hsv:main',
+```
+- 터미넗에서 아래 코드 실행
+```bash
+ros2 launch my_opencv_tutorials hsv_converter.launch.xml 
+```
+- rqt 열고 Plugins -> Configuration -> Dynamic Reconfigure -> Refresh -> hsv_converter -> 슬라이더 조정
+- image_hsv를 확인하며 파라미터 변경이 잘 반영되는지 확인
+
+## Canny Edge Detector
