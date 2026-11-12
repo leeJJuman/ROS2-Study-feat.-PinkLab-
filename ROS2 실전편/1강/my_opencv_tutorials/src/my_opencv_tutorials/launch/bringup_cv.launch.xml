@@ -1,7 +1,7 @@
 <?xml version="1.0"?> <!--파라미터를 가져오기위한 launch 파일-->
 <launch>
     <arg name="params_file" 
-                default="$(find-pkg-share my_opencv_tutorials)/config/size.yaml"/>
+                default="$(find-pkg-share my_opencv_tutorials)/config/cv_params.yaml"/>
     <node pkg="my_opencv_tutorials" exec="img_pub" output="screen">
         <param from="$(var params_file)"/>
     </node>
