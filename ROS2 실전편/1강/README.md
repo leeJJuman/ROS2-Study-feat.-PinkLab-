@@ -96,3 +96,51 @@ ros2 launch my_opencv_tutorials hsv_converter.launch.xml
 - image_hsv를 확인하며 파라미터 변경이 잘 반영되는지 확인
 
 ## Canny Edge Detector
+
+- cv_params.yaml 파일에 아래 내용 추가
+```yaml
+edge_detect:
+    ros__parameters:
+        threshold1: 100
+        threshold2: 200
+```
+- launch폴더에 edge_detect.launch.xml 파일 생성
+- setup.py의 entry_points에 아래 코드 추가
+```python
+'edge_detect = my_opencv_tutorials.edge_detect:main',
+```
+- 터미넗에서 아래 코드 실행
+```bash
+
+```
+
+## Cartoon Styler
+
+- cv_params.yaml 파일에 아래 내용 추가
+```yaml
+cartoon_styler:
+    ros__parameters:
+        sigma_color: 20
+        sigma_space: 9
+```
+- launch폴더에 cartoon_styler.launch.xml 파일 생성
+- setup.py의 entry_points에 아래 코드 추가
+```python
+'cartoon = my_opencv_tutorials.cartoon:main',
+```
+- 터미넗에서 아래 코드 실행
+```bash
+
+```
+
+## Optical Flow node
+
+- launch폴더에 optical_flow.launch.xml 파일 생성
+- setup.py의 entry_points에 아래 코드 추가
+```python
+'optical_flow = my_opencv_tutorials.optical_flow:main',
+```
+- 터미넗에서 아래 코드 실행
+```bash
+
+```
