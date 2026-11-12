@@ -61,6 +61,7 @@ ros2 run my_opencv_tutorials img_pub
 
 - config 폴더 만들고 cv_params.yaml 파일생성 (파라미터를 반영하고싶을땐 cv_params.yaml 파일에서 값 수정)
 - launch 폴더에 bringup_cv.launch.xml 파일 생성
+- img_pub.py 파일 생성 (코드의 설명은 주석에)
 
 ```bash
 ros2 launch my_opencv_tutorials bringup_cv.launch.xml 
