@@ -111,7 +111,7 @@ edge_detect:
 ```
 - 터미넗에서 아래 코드 실행
 ```bash
-
+ros2 launch my_opencv_tutorials edge_detect.launch.xml 
 ```
 
 ## Cartoon Styler
@@ -130,7 +130,7 @@ cartoon_styler:
 ```
 - 터미넗에서 아래 코드 실행
 ```bash
-
+ros2 launch my_opencv_tutorials cartoon_styler.launch.xml 
 ```
 
 ## Optical Flow node
