@@ -59,10 +59,12 @@ ros2 run my_opencv_tutorials img_pub
 
 ## 파라미터 적용하기
 
-- config 폴더 만들고 size.yaml 파일생성 (파라미터를 반영하고싶을땐 size.yaml 파일에서 값 수정)
+- config 폴더 만들고 cv_params.yaml 파일생성 (파라미터를 반영하고싶을땐 cv_params.yaml 파일에서 값 수정)
 - launch 폴더에 bringup_cv.launch.xml 파일 생성
 
 ```bash
 ros2 launch my_opencv_tutorials bringup_cv.launch.xml 
 ```
 - 반영되었는지 확인
+
+## HSV
