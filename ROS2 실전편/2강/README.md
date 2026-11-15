@@ -11,3 +11,4 @@ sudo apt install ros-jazzy-tf-transformations
 ```bash
 rviz2
 ```
+- world -> add -> TF
