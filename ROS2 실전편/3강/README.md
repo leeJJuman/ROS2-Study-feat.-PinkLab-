@@ -32,7 +32,7 @@ sudo apt update && sudo apt install ros-jazzy-domain-bridge -y
 - domain_bridge 사용을 위한 패키지 설치
 - 
 <img width="1672" height="942" alt="image" src="https://github.com/user-attachments/assets/ae9813a7-182e-42c5-8f16-d9f7bb211629" />
-- ```bash
-  ros2 run domain_bridge domain_bridge ~/ros_domain/my_bridge.yaml
-  ```
-  실행 후 정상스럽게 구독되는 것 확인 가능
+```bash
+ros2 run domain_bridge domain_bridge ~/ros_domain/my_bridge.yaml
+```
+- 실행 후 정상스럽게 구독되는 것 확인 가능
