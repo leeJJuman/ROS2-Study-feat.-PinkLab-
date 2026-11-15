@@ -12,3 +12,7 @@ sudo apt install ros-jazzy-tf-transformations
 rviz2
 ```
 - world -> add -> TF
+
+### 실행중인 topic visualization
+
+- Add -> By Topic
