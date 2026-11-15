@@ -6,3 +6,8 @@
 ```bash
 sudo apt install ros-jazzy-tf-transformations
 ```
+
+## 시뮬레이션 확인
+```bash
+rviz2
+```
