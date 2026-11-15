@@ -1,0 +1,8 @@
+#my_bridge.yaml
+
+name: my_bridge
+from_domain: 1
+to_domain: 2
+topics:
+  chatter:
+    type: std_msgs/msg/String
