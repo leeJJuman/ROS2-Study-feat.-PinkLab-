@@ -25,3 +25,14 @@
 <img width="1850" height="942" alt="image" src="https://github.com/user-attachments/assets/55f9d2b1-9bab-4ad4-ae72-32709894cda1" />
 - 실행 결과 ROS_DOMAIN_ID가 1인 경우 90도, 2인경우 270도로 돌게 된다.
 
+## ROS_DOMAIN_BRIDGE 사용 실습
+```bash
+sudo apt update && sudo apt install ros-jazzy-domain-bridge -y
+```
+- domain_bridge 사용을 위한 패키지 설치
+- 
+<img width="1672" height="942" alt="image" src="https://github.com/user-attachments/assets/ae9813a7-182e-42c5-8f16-d9f7bb211629" />
+- ```bash
+  ros2 run domain_bridge domain_bridge ~/ros_domain/my_bridge.yaml
+  ```
+  실행 후 정상스럽게 구독되는 것 확인 가능
